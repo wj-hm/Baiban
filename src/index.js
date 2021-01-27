@@ -1,6 +1,10 @@
 import React from "react";
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 
-import App from './App';
+import App from "./App";
+import loginWithTeacher from "./loginWithTeacher";
 
-ReactDOM.render(<App/>, document.getElementById("root"));
+(async () => {
+  await loginWithTeacher();
+  ReactDOM.render(<App />, document.getElementById("root"));
+})();
