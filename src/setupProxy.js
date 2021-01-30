@@ -3,10 +3,10 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 module.exports = function (app) {
   app.use(
     createProxyMiddleware("/api", {
-      // target: "http://test.yi-you.org",
+      target: "http://test.yi-you.org:7070",
       // target: "http://127.0.0.1:8087",
-      target: "http://127.0.0.1:8088",
-      // pathRewrite: {'^/api' : ''},
+      // target: "http://127.0.0.1:8088",
+      pathRewrite: { "^/api": "" },
       changeOrigin: true, // target是域名的话，需要这个参数，
       // secure: false,
     })
